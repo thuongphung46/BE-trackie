@@ -4,17 +4,14 @@ spring:
   application:
     name: hrm-actvn
   datasource:
-#    url: jdbc:mariadb://127.0.0.1:3306/hrm_actvn
-    url: jdbc:mariadb://45.252.249.243:3306/hrm_actvn
+    # url: jdbc:mariadb://127.0.0.1:3306/trackie
+    url: jdbc:mariadb://45.252.249.243:3306/trackie
     username: root
     password: Manhha3010@
     driver-class-name: org.mariadb.jdbc.Driver
   banner:
     location: banner.txt
     charset: utf-8
-  jackson:
-    serialization:
-        fail-on-empty-beans: false
 server:
   servlet:
     context-path: /api

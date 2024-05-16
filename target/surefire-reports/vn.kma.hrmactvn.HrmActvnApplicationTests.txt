@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: vn.kma.hrmactvn.HrmActvnApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.69 s - in vn.kma.hrmactvn.HrmActvnApplicationTests

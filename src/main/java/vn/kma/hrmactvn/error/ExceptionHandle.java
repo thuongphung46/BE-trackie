@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ExceptionHandle {
 
   @ExceptionHandler(ActvnException.class)
-  public ResponseEntity handleMomEduException(ActvnException e) {
+  public ResponseEntity handleCustomException(ActvnException e) {
     e.printStackTrace();
     return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
   }
