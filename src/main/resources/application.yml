@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: development
+  application:
+    name: hrm-actvn
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/hrm_actvn
+#    url: jdbc:mariadb://45.252.249.243:3306/hrm_actvn
+    username: root
+    password: Manhha3010@
+    driver-class-name: org.mariadb.jdbc.Driver
+  banner:
+    location: banner.txt
+    charset: utf-8
+server:
+  servlet:
+    context-path: /api
+  port: 9669
+actvn:
+  jwt:
+    secret: 634b01203a6a7bc616a0310ff95693fcdd931c069fcf951be7e5aae4200e31597de5ba9daa04ae113dcc2ae7999d9aebb2e277f2ed2072d5033dd36d28bcf36288da8a60097961d64286127a272070c3c4a19fe1e3e0dc3f35eb7de90f0829c512092689ecbc978661f0a945c7d5238525eec3c7637b2ed7f6f806f0017f93e081662bd754671cac1aff822154dd1413394951dc01623863e717955289c0df66684e74f72f13bf71e36dad7a1f5cf96287c055491a72c45036e99d43a151ad1ee1058d30929433811ae56e232ed7b9544bb697119dad3d62d81b553fc85fb699537c25a48e8f90b779bf3c333b23289cabd413f6ad48f8908f8022ddf2356c83f49e99bbed6286eba450bd8f6c132e72aad8f533a8fab31ef374d6c8003badff9187bf89338b1cf68f1807a4e303f64e60f40252b08f3ea6a4f953f1fa4a4682
+    expiration: 86400000
