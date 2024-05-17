@@ -6,8 +6,8 @@ spring:
   datasource:
     # url: jdbc:mariadb://127.0.0.1:3306/trackie
     url: jdbc:mariadb://45.252.249.243:3306/trackie
-    username: root
-    password: Manhha3010@
+    username: hrm
+    password: HRm!@3
     driver-class-name: org.mariadb.jdbc.Driver
   banner:
     location: banner.txt
