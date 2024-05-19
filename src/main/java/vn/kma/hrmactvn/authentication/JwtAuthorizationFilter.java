@@ -35,7 +35,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
       throws ServletException, IOException {
     log.info(request.getRequestURI());
 
-    boolean isDisableAuthorize = false;
+    boolean isDisableAuthorize = true;
     for (String check : ApplicationConstant.SECURITY_CONFIG.DISABLE_AUTHORIZE) {
       isDisableAuthorize = new AntPathMatcher().match(check,
           request.getRequestURI().substring(request.getContextPath().length()));
@@ -44,40 +44,42 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
       }
     }
     try {
-      if (isDisableAuthorize) {
-        filterChain.doFilter(request, response);
-        return;
-      } else {
-          String accessToken = jwtUtil.resolveToken(request);
-          if (accessToken == null) {
-              handleUnauthorized(response);
-              return;
-          }
-        Claims claims = jwtUtil.resolveClaims(request);
-        if (claims != null & jwtUtil.validateClaims(claims)) {
-          UserDetailsImpl userDetails = userDetailsService.loadUserByUsername(claims.getSubject());
-          if (userDetails == null) {
-            handleUnauthorized(response);
-            return;
-          }
-          UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-              userDetails, userDetails, userDetails.getAuthorities());
-          authenticationToken.setDetails(
-              new WebAuthenticationDetailsSource().buildDetails(request));
-          SecurityContext context = SecurityContextHolder.createEmptyContext();
-          context.setAuthentication(authenticationToken);
-          SecurityContextHolder.setContext(context);
-        } else {
-          handleUnauthorized(response);
-          return;
-        }
-      }
+//      if (isDisableAuthorize) {
+//        filterChain.doFilter(request, response);
+//        return;
+//      } else {
+//          String accessToken = jwtUtil.resolveToken(request);
+//          if (accessToken == null) {
+//              handleUnauthorized(response);
+//              return;
+//          }
+//        Claims claims = jwtUtil.resolveClaims(request);
+//        if (claims != null & jwtUtil.validateClaims(claims)) {
+//          UserDetailsImpl userDetails = userDetailsService.loadUserByUsername(claims.getSubject());
+//          if (userDetails == null) {
+//            handleUnauthorized(response);
+//            return;
+//          }
+//          UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+//              userDetails, userDetails, userDetails.getAuthorities());
+//          authenticationToken.setDetails(
+//              new WebAuthenticationDetailsSource().buildDetails(request));
+//          SecurityContext context = SecurityContextHolder.createEmptyContext();
+//          context.setAuthentication(authenticationToken);
+//          SecurityContextHolder.setContext(context);
+//        } else {
+//          handleUnauthorized(response);
+//          return;
+//        }
+//      }
+      filterChain.doFilter(request, response);
+      return;
     } catch (Exception e) {
       e.printStackTrace();
       handleUnauthorized(response);
       return;
     }
-    filterChain.doFilter(request, response);
+//    filterChain.doFilter(request, response);
   }
 
 

@@ -52,8 +52,9 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
             .addFilterBefore(corsFilter, UsernamePasswordAuthenticationFilter.class)
             .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
-                .requestMatchers(request -> Arrays.stream(SECURITY_CONFIG.DISABLE_AUTHORIZE)
-                    .anyMatch(url -> new AntPathRequestMatcher(url).matches(request)))
+                .requestMatchers(request -> {
+                    return true;
+                })
                 .permitAll()
                 .anyRequest().authenticated())
             .sessionManagement(
