@@ -5,41 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a64f89ba-54e1-48d9-b783-3f459aabd9d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/author/AuthorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/character/CharacterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/GenreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/dto/GenreResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/PostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/dto/PostResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Author.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/GenreCharacter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/PostAuthor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/PostCharacter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/PostGenre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/AuthorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/CharacterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/GenreCharacterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/GenreRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostAuthorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostCharacterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostGenreRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/AuthorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/CharacterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/GenreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a29239ae-4dfe-412a-a04b-2ed9ad4174c4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm-actvn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hrm-actvn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/authentication/JwtAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/authentication/JwtAuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/authentication/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/authentication/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/authentication/JwtAuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/authentication/JwtAuthorizationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/authentication/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/authentication/SecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +30,9 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -75,9 +48,10 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.HrmActvnApplication.executor": "Run",
+    "Spring Boot.HrmActvnApplication.executor": "Debug",
     "dart.analysis.tool.window.visible": "false",
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "main",
@@ -87,8 +61,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "http.certificates",
     "show.migrate.to.gradle.popup": "false",
@@ -109,8 +83,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-97de7592" />
+        <option value="jdk-11.0.22-azul-11.0.22-f644763e9732-4d405f02" />
       </set>
     </attachedChunks>
   </component>
@@ -127,6 +101,7 @@
       <workItem from="1715849436868" duration="31000" />
       <workItem from="1715909007984" duration="71000" />
       <workItem from="1716129032733" duration="6601000" />
+      <workItem from="1716215224621" duration="1774000" />
     </task>
     <servers />
   </component>
