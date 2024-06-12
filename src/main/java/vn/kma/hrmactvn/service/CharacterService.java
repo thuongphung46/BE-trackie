@@ -3,6 +3,7 @@ package vn.kma.hrmactvn.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import vn.kma.hrmactvn.controller.character.CharacterCreateRequest;
 import vn.kma.hrmactvn.entity.Character;
 import vn.kma.hrmactvn.entity.Post;
 import vn.kma.hrmactvn.entity.PostCharacter;
@@ -30,5 +31,19 @@ public class CharacterService {
         List<Post> posts = postRepository.findAllByIdIn(postIds);
         character.setPosts(posts);
         return character;
+    }
+
+    public Character createCharacter(CharacterCreateRequest request) {
+        Character character = Character.from(request);
+        return characterRepository.save(character);
+    }
+
+    public Character updateCharacter(Long id,CharacterCreateRequest request) throws ActvnException {
+        Character character = characterRepository.findById(id).orElse(null);
+        if (character == null) {
+            throw new ActvnException(404, "Character not found");
+        }
+        character.update(request);
+        return characterRepository.save(character);
     }
 }

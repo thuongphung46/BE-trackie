@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import vn.kma.hrmactvn.controller.character.CharacterCreateRequest;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -70,4 +72,36 @@ public class Character {
 
     @Transient
     private List<Post> posts;
+
+    public static Character from(CharacterCreateRequest request) {
+        LocalDate birthday  =  request.getBirthday() != null ?  LocalDate.parse(request.getBirthday()) : LocalDate.now();
+        return Character.builder()
+                .name(request.getName())
+                .birthday(birthday)
+                .sign(request.getSign())
+                .height(request.getHeight())
+                .weight(request.getWeight())
+                .bloodType(request.getBloodType())
+                .shoeSize(request.getShoeSize())
+                .favoriteFood(request.getFavoriteFood())
+                .dislikes(request.getDislikes())
+                .bio(request.getBio())
+                .image(request.getImage())
+                .build();
+    }
+
+    public void update(CharacterCreateRequest request) {
+        LocalDate birthday  =  request.getBirthday() != null ?  LocalDate.parse(request.getBirthday()) : LocalDate.now();
+        this.name = request.getName() != null ? request.getName() : this.name;
+        this.birthday = request.getBirthday() != null ? birthday : this.birthday;
+        this.sign = request.getSign() != null ? request.getSign() : this.sign;
+        this.height = request.getHeight() != null ? request.getHeight() : this.height;
+        this.weight = request.getWeight() != null ? request.getWeight() : this.weight;
+        this.bloodType = request.getBloodType() != null ? request.getBloodType() : this.bloodType;
+        this.shoeSize = request.getShoeSize() != null ? request.getShoeSize() : this.shoeSize;
+        this.favoriteFood = request.getFavoriteFood() != null ? request.getFavoriteFood() : this.favoriteFood;
+        this.dislikes = request.getDislikes() != null ? request.getDislikes() : this.dislikes;
+        this.bio = request.getBio() != null ? request.getBio() : this.bio;
+        this.image = request.getImage() != null ? request.getImage() : this.image;
+    }
 }

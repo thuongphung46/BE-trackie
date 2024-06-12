@@ -8,4 +8,6 @@ import java.util.List;
 public interface GenreRepository extends JpaRepository<Genre, Long> {
 
     List<Genre> findAllByIdIn(List<Long> genreIds);
+
+    Genre findFirstById(Long genreId);
 }

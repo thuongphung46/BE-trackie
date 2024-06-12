@@ -3,6 +3,7 @@ package vn.kma.hrmactvn.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import vn.kma.hrmactvn.controller.genre.GenreCreateRequest;
 import vn.kma.hrmactvn.controller.genre.dto.GenreResponse;
 import vn.kma.hrmactvn.controller.post.dto.PostResponse;
 import vn.kma.hrmactvn.entity.Genre;
@@ -66,5 +67,27 @@ public class GenreService {
         // get random review count for each post 0 - 10000
         genreResponse.getPosts().forEach(postResponse -> postResponse.setReviewCount((long) (Math.random() * 10000)));
         return genreResponse;
+    }
+
+    public Genre createGenre(GenreCreateRequest request) {
+        Genre genre = Genre.from(request);
+        return genreRepository.save(genre);
+    }
+
+    public Genre update(Long id, GenreCreateRequest request) throws ActvnException {
+        Genre genre = genreRepository.findById(id).orElse(null);
+        if (genre == null) {
+            throw new ActvnException(404, "Genre not found");
+        }
+        genre.update(request);
+        return genreRepository.save(genre);
+    }
+
+    public void delete(Long id) throws ActvnException {
+        Genre genre = genreRepository.findById(id).orElse(null);
+        if (genre == null) {
+            throw new ActvnException(404, "Genre not found");
+        }
+        genreRepository.delete(genre);
     }
 }

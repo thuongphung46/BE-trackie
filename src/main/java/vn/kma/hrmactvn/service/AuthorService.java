@@ -3,6 +3,7 @@ package vn.kma.hrmactvn.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import vn.kma.hrmactvn.controller.author.AuthorCreateRequest;
 import vn.kma.hrmactvn.entity.Author;
 import vn.kma.hrmactvn.entity.Post;
 import vn.kma.hrmactvn.entity.PostAuthor;
@@ -23,13 +24,28 @@ public class AuthorService {
     private final PostAuthorRepository postAuthorRepository;
 
     public Author getAuthorById(Long id) throws ActvnException {
-        Author author = authorRepository.findById(id).orElse(null);
+        return authorRepository.findFirstById(id);
+    }
+
+    public Author createAuthor(AuthorCreateRequest request) {
+        Author author = Author.from(request);
+        return authorRepository.save(author);
+    }
+
+    public Author update(Long id, AuthorCreateRequest request) throws ActvnException {
+        Author author = authorRepository.findFirstById(id);
         if (author == null) {
-           throw new ActvnException(404, "Author not found");
+            throw new ActvnException(404,"Author not found");
         }
-        List<Long> postIds = postAuthorRepository.findAllByAuthorId(author.getId()).stream().map(PostAuthor::getPostId).collect(Collectors.toList());
-        List<Post> posts = postRepository.findAllByIdIn(postIds);
-        author.setPosts(posts);
-        return author;
+        author.update(request);
+        return authorRepository.save(author);
+    }
+
+    public void delete(Long id) throws ActvnException {
+        Author author = authorRepository.findFirstById(id);
+        if (author == null) {
+            throw new ActvnException(404,"Author not found");
+        }
+        authorRepository.delete(author);
     }
 }

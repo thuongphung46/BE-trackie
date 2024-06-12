@@ -3,6 +3,7 @@ package vn.kma.hrmactvn.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import vn.kma.hrmactvn.controller.post.dto.PostCreateRequest;
 import vn.kma.hrmactvn.controller.post.dto.PostResponse;
 import vn.kma.hrmactvn.entity.*;
 import vn.kma.hrmactvn.entity.Character;
@@ -24,6 +25,7 @@ public class PostService {
     private final CharacterRepository characterRepository;
     private final PostGenreRepository postGenreRepository;
     private final GenreRepository genreRepository;
+    private final GenreCharacterRepository genreCharacterRepository;
 
     public PostResponse getPostById(Long id) throws ActvnException {
         Post post = postRepository.findById(id).orElse(null);
@@ -87,5 +89,129 @@ public class PostService {
             postResponses.add(postResponse);
         }
         return postResponses;
+    }
+
+    public Post createPost(PostCreateRequest request) {
+        Post post = Post.from(request);
+        if (request.getAuthorIds() != null && !request.getAuthorIds().isEmpty()) {
+            for (Long authorId : request.getAuthorIds()) {
+                Author author = authorRepository.findFirstById(authorId);
+                if (author == null) {
+                    continue;
+                }
+                PostAuthor postAuthor = new PostAuthor();
+                postAuthor.setPostId(post.getId());
+                postAuthor.setAuthorId(authorId);
+                postAuthorRepository.save(postAuthor);
+            }
+        }
+        if (request.getCharacterIds() != null && !request.getCharacterIds().isEmpty()) {
+            for (Long characterId : request.getCharacterIds()) {
+                Character character = characterRepository.findFirstById(characterId);
+                if (character == null) {
+                    continue;
+                }
+                PostCharacter postCharacter = new PostCharacter();
+                postCharacter.setPostId(post.getId());
+                postCharacter.setCharacterId(characterId);
+                postCharacterRepository.save(postCharacter);
+            }
+        }
+        if (request.getGenreIds() != null && !request.getGenreIds().isEmpty()) {
+            for (Long genreId : request.getGenreIds()) {
+                Genre genre = genreRepository.findFirstById(genreId);
+                if (genre == null) {
+                    continue;
+                }
+                PostGenre postGenre = new PostGenre();
+                postGenre.setPostId(post.getId());
+                postGenre.setGenreId(genreId);
+                postGenreRepository.save(postGenre);
+            }
+        }
+
+        if ((request.getGenreIds() != null && !request.getGenreIds().isEmpty()) && (request.getCharacterIds() != null && !request.getCharacterIds().isEmpty())) {
+            for (Long genreId : request.getGenreIds()) {
+                for (Long characterId : request.getCharacterIds()) {
+                    GenreCharacter genreCharacter = new GenreCharacter();
+                    genreCharacter.setGenreId(genreId);
+                    genreCharacter.setCharacterId(characterId);
+                    genreCharacterRepository.save(genreCharacter);
+                }
+            }
+        }
+
+        return postRepository.save(post);
+    }
+
+    public Post update(Long id, PostCreateRequest request) {
+        Post post = postRepository.findById(id).orElse(null);
+        if (post == null) {
+            return null;
+        }
+        post.update(request);
+        if (request.getAuthorIds() != null && !request.getAuthorIds().isEmpty()) {
+            postAuthorRepository.deleteAllByPostId(post.getId());
+            for (Long authorId : request.getAuthorIds()) {
+                Author author = authorRepository.findFirstById(authorId);
+                if (author == null) {
+                    continue;
+                }
+                PostAuthor postAuthor = new PostAuthor();
+                postAuthor.setPostId(post.getId());
+                postAuthor.setAuthorId(authorId);
+                postAuthorRepository.save(postAuthor);
+            }
+        }
+        if (request.getCharacterIds() != null && !request.getCharacterIds().isEmpty()) {
+            postCharacterRepository.deleteAllByPostId(post.getId());
+            for (Long characterId : request.getCharacterIds()) {
+                Character character = characterRepository.findFirstById(characterId);
+                if (character == null) {
+                    continue;
+                }
+                PostCharacter postCharacter = new PostCharacter();
+                postCharacter.setPostId(post.getId());
+                postCharacter.setCharacterId(characterId);
+                postCharacterRepository.save(postCharacter);
+            }
+        }
+        if (request.getGenreIds() != null && !request.getGenreIds().isEmpty()) {
+            postGenreRepository.deleteAllByPostId(post.getId());
+            for (Long genreId : request.getGenreIds()) {
+                Genre genre = genreRepository.findFirstById(genreId);
+                if (genre == null) {
+                    continue;
+                }
+                PostGenre postGenre = new PostGenre();
+                postGenre.setPostId(post.getId());
+                postGenre.setGenreId(genreId);
+                postGenreRepository.save(postGenre);
+            }
+        }
+
+        if ((request.getGenreIds() != null && !request.getGenreIds().isEmpty()) && (request.getCharacterIds() != null && !request.getCharacterIds().isEmpty())) {
+            for (Long genreId : request.getGenreIds()) {
+                for (Long characterId : request.getCharacterIds()) {
+                    genreCharacterRepository.deleteByGenreIdAndCharacterId(genreId, characterId);
+                    GenreCharacter genreCharacter = new GenreCharacter();
+                    genreCharacter.setGenreId(genreId);
+                    genreCharacter.setCharacterId(characterId);
+                    genreCharacterRepository.save(genreCharacter);
+                }
+            }
+        }
+
+        return postRepository.save(post);
+    }
+
+
+
+    public void delete(Long id) throws ActvnException {
+        Post post = postRepository.findById(id).orElse(null);
+        if (post == null) {
+            throw new ActvnException(404, "Post not found");
+        }
+        postRepository.delete(post);
     }
 }

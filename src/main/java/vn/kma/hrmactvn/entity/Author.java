@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import vn.kma.hrmactvn.controller.author.AuthorCreateRequest;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -52,5 +54,26 @@ public class Author {
 
     @Transient
     private List<Post> posts;
+
+    public static Author from(AuthorCreateRequest request) {
+        LocalDate birthday = request.getBirthday() != null ? LocalDate.parse(request.getBirthday()) : null;
+        return Author.builder()
+                .name(request.getName())
+                .birthday(birthday)
+                .place(request.getPlace())
+                .bio(request.getBio())
+                .image(request.getImage())
+                .build();
+    }
+
+    public void update(AuthorCreateRequest request) {
+        LocalDate birthday = request.getBirthday() != null ? LocalDate.parse(request.getBirthday()) : null;
+        this.name = request.getName() != null ? request.getName() : this.name;
+        this.birthday = birthday != null ? birthday : this.birthday;
+        this.place = request.getPlace() != null ? request.getPlace() : this.place;
+        this.bio = request.getBio() != null ? request.getBio() : this.bio;
+        this.image = request.getImage() != null ? request.getImage() : this.image;
+
+    }
 
 }

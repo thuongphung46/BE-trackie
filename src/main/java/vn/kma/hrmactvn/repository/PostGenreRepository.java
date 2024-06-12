@@ -11,4 +11,6 @@ public interface PostGenreRepository extends JpaRepository<PostGenre, Long> {
     List<PostGenre> findAllByGenreId(Long genreId);
 
     List<PostGenre> findAllByPostId(Long postId);
+
+    void deleteAllByPostId(Long id);
 }

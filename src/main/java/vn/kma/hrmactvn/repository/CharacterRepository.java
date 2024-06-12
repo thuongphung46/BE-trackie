@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface CharacterRepository extends JpaRepository<Character, Long> {
     List<Character> findAllByIdIn(List<Long> characterIds);
+
+    Character findFirstById(Long characterId);
 }

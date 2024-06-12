@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import vn.kma.hrmactvn.controller.post.dto.PostCreateRequest;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -44,5 +46,21 @@ public class Post {
 
     @Column(name = "modified_date", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private Timestamp modifiedDate;
+
+    public static Post from(PostCreateRequest request){
+        return Post.builder()
+                .name(request.getName())
+                .description(request.getDescription())
+                .synopsis(request.getSynopsis())
+                .image(request.getImage())
+                .build();
+    }
+
+    public void update(PostCreateRequest request){
+        this.name = request.getName() != null ? request.getName() : this.name;
+        this.description = request.getDescription() != null ? request.getDescription() : this.description;
+        this.synopsis = request.getSynopsis() != null ? request.getSynopsis() : this.synopsis;
+        this.image = request.getImage() != null ? request.getImage() : this.image;
+    }
 }
 

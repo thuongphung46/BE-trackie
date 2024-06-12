@@ -10,4 +10,6 @@ public interface PostCharacterRepository extends JpaRepository<PostCharacter, Lo
     List<PostCharacter> findAllByPostId(Long id);
 
     List<PostCharacter> findAllByCharacterId(Long id);
+
+    void deleteAllByPostId(Long id);
 }

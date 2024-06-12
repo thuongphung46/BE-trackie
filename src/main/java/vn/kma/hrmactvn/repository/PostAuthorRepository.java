@@ -10,4 +10,6 @@ public interface PostAuthorRepository extends JpaRepository<PostAuthor, Long> {
     List<PostAuthor> findAllByPostId(Long id);
 
     List<PostAuthor> findAllByAuthorId(Long id);
+
+    void deleteAllByPostId(Long id);
 }
