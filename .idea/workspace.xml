@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a64f89ba-54e1-48d9-b783-3f459aabd9d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/author/AuthorCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/character/CharacterCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/GenreCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/dto/PostCreateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/author/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/author/AuthorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/character/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/character/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/GenreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/GenreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/entity/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/AuthorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/CharacterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/CharacterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/GenreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/GenreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostAuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostAuthorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostCharacterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostCharacterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostGenreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/repository/PostGenreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/AuthorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/CharacterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/GenreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/GenreService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/character/CharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/character/CharacterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/service/CharacterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/service/CharacterService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -3,6 +3,7 @@ package vn.kma.hrmactvn.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import vn.kma.hrmactvn.controller.post.dto.PostCreateRequest;
 import vn.kma.hrmactvn.controller.post.dto.PostResponse;
 import vn.kma.hrmactvn.entity.*;
@@ -93,6 +94,7 @@ public class PostService {
 
     public Post createPost(PostCreateRequest request) {
         Post post = Post.from(request);
+        postRepository.save(post);
         if (request.getAuthorIds() != null && !request.getAuthorIds().isEmpty()) {
             for (Long authorId : request.getAuthorIds()) {
                 Author author = authorRepository.findFirstById(authorId);
@@ -141,9 +143,10 @@ public class PostService {
             }
         }
 
-        return postRepository.save(post);
+        return post;
     }
 
+    @Transactional(rollbackFor = Exception.class)
     public Post update(Long id, PostCreateRequest request) {
         Post post = postRepository.findById(id).orElse(null);
         if (post == null) {

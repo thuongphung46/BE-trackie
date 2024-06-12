@@ -46,4 +46,12 @@ public class CharacterService {
         character.update(request);
         return characterRepository.save(character);
     }
+
+    public void deleteCharacter(Long id) throws ActvnException {
+        Character character = characterRepository.findById(id).orElse(null);
+        if (character == null) {
+            throw new ActvnException(404, "Character not found");
+        }
+        characterRepository.delete(character);
+    }
 }

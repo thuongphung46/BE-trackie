@@ -29,4 +29,10 @@ public class CharacterController {
     public ResponseEntity updateCharacter(@PathVariable Long id, @RequestBody CharacterCreateRequest request) throws ActvnException {
         return ResponseEntity.ok(characterService.updateCharacter(id,request));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteCharacter(@PathVariable Long id) throws ActvnException {
+        characterService.deleteCharacter(id);
+        return ResponseEntity.ok().build();
+    }
 }
