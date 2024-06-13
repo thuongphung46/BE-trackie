@@ -48,4 +48,8 @@ public class AuthorService {
         }
         authorRepository.delete(author);
     }
+
+    public List<Author> getAllAuthors() {
+        return authorRepository.findAll();
+    }
 }

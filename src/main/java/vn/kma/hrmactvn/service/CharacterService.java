@@ -54,4 +54,8 @@ public class CharacterService {
         }
         characterRepository.delete(character);
     }
+
+    public List<Character> getAllCharacters() {
+        return characterRepository.findAll();
+    }
 }

@@ -217,4 +217,8 @@ public class PostService {
         }
         postRepository.delete(post);
     }
+
+    public List<Post> getAllPosts() {
+        return postRepository.findAll();
+    }
 }

@@ -90,4 +90,8 @@ public class GenreService {
         }
         genreRepository.delete(genre);
     }
+
+    public List<Genre> getAllGenres() {
+        return genreRepository.findAll();
+    }
 }

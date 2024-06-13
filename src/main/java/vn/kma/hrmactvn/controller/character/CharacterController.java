@@ -8,6 +8,8 @@ import vn.kma.hrmactvn.entity.Character;
 import vn.kma.hrmactvn.error.ActvnException;
 import vn.kma.hrmactvn.service.CharacterService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/characters")
 @RequiredArgsConstructor
@@ -34,5 +36,10 @@ public class CharacterController {
     public ResponseEntity deleteCharacter(@PathVariable Long id) throws ActvnException {
         characterService.deleteCharacter(id);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Character>> getAllCharacters() {
+        return ResponseEntity.ok(characterService.getAllCharacters());
     }
 }

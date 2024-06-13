@@ -4,8 +4,11 @@ package vn.kma.hrmactvn.controller.genre;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import vn.kma.hrmactvn.entity.Genre;
 import vn.kma.hrmactvn.error.ActvnException;
 import vn.kma.hrmactvn.service.GenreService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/genres")
@@ -38,6 +41,11 @@ public class GenreController {
     public ResponseEntity<?> deleteGenre(@PathVariable Long id) throws ActvnException {
         genreService.delete(id);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Genre>> getAllGenres() {
+        return ResponseEntity.ok(genreService.getAllGenres());
     }
 
 }

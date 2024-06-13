@@ -4,8 +4,11 @@ package vn.kma.hrmactvn.controller.author;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import vn.kma.hrmactvn.entity.Author;
 import vn.kma.hrmactvn.error.ActvnException;
 import vn.kma.hrmactvn.service.AuthorService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/authors")
@@ -33,6 +36,11 @@ public class AuthorController {
     public ResponseEntity<?> deleteAuthor(@PathVariable Long id) throws ActvnException {
         authorService.delete(id);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Author>> getAllAuthors() {
+        return ResponseEntity.ok(authorService.getAllAuthors());
     }
 
 }

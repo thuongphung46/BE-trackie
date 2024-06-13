@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a64f89ba-54e1-48d9-b783-3f459aabd9d2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/authentication/JwtAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/authentication/JwtAuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/author/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/author/AuthorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/character/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/character/CharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/GenreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/GenreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/AuthorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/CharacterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/GenreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/GenreService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/character/CharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/character/CharacterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/service/CharacterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/service/CharacterService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +84,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -98,6 +102,9 @@
       <workItem from="1715849436868" duration="31000" />
       <workItem from="1715909007984" duration="71000" />
       <workItem from="1716129032733" duration="6601000" />
+      <workItem from="1718240972385" duration="73000" />
+      <workItem from="1718249728476" duration="717000" />
+      <workItem from="1718293155286" duration="378000" />
     </task>
     <servers />
   </component>
