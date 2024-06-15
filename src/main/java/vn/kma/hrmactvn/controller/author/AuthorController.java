@@ -1,10 +1,9 @@
 package vn.kma.hrmactvn.controller.author;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import vn.kma.hrmactvn.entity.Author;
+import vn.kma.hrmactvn.dto.BaseResponse;
 import vn.kma.hrmactvn.error.ActvnException;
 import vn.kma.hrmactvn.service.AuthorService;
 
@@ -18,29 +17,83 @@ public class AuthorController {
     private final AuthorService authorService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getAuthorById(@PathVariable Long id) throws ActvnException {
-        return ResponseEntity.ok(authorService.getAuthorById(id));
+    public ResponseEntity<BaseResponse> getAuthorById(@PathVariable Long id) {
+        BaseResponse response = new BaseResponse();
+        try {
+
+            response.setMsg_code(200);
+            response.setMessage("Successfully");
+            response.setContent( authorService.getAuthorById(id));
+        } catch (ActvnException e) {
+            response.setMsg_code(401);
+            response.setMessage(e.getMessage());
+        } catch (Exception e) {
+            response.setMsg_code(400);
+            response.setMessage("Có lỗi xảy ra");
+        }
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping
-    public ResponseEntity<?> createAuthor(@RequestBody AuthorCreateRequest request) {
-        return ResponseEntity.ok(authorService.createAuthor(request));
+    public ResponseEntity<BaseResponse> createAuthor(@RequestBody AuthorCreateRequest request) {
+        BaseResponse response = new BaseResponse();
+        try {
+            authorService.createAuthor(request);
+            response.setMsg_code(200);
+            response.setMessage("Successfully");
+        } catch (Exception e) {
+            response.setMsg_code(400);
+            response.setMessage("Có lỗi xảy ra");
+        }
+        return ResponseEntity.ok(response);
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> updateAuthor(@PathVariable Long id, @RequestBody AuthorCreateRequest request) throws ActvnException {
-        return ResponseEntity.ok(authorService.update(id,request));
+    public ResponseEntity<BaseResponse> updateAuthor(@PathVariable Long id, @RequestBody AuthorCreateRequest request) {
+        BaseResponse response = new BaseResponse();
+        try {
+            authorService.update(id, request);
+            response.setMsg_code(200);
+            response.setMessage("Successfully");
+        } catch (ActvnException e) {
+            response.setMsg_code(401);
+            response.setMessage(e.getMessage());
+        } catch (Exception e) {
+            response.setMsg_code(400);
+            response.setMessage("Có lỗi xảy ra");
+        }
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteAuthor(@PathVariable Long id) throws ActvnException {
-        authorService.delete(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<BaseResponse> deleteAuthor(@PathVariable Long id) {
+        BaseResponse response = new BaseResponse();
+        try {
+            authorService.delete(id);
+            response.setMsg_code(200);
+            response.setMessage("Success");
+        } catch (ActvnException e) {
+            response.setMsg_code(401);
+            response.setMessage(e.getMessage());
+        } catch (Exception e) {
+            response.setMsg_code(400);
+            response.setMessage("Có lỗi xảy ra");
+        }
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping
-    public ResponseEntity<List<Author>> getAllAuthors() {
-        return ResponseEntity.ok(authorService.getAllAuthors());
-    }
+    public ResponseEntity<BaseResponse> getAllAuthors() {
+        BaseResponse response = new BaseResponse();
+        try {
 
+            response.setMsg_code(200);
+            response.setMessage("Success");
+            response.setContent(authorService.getAllAuthors());
+        } catch (Exception e) {
+            response.setMsg_code(400);
+            response.setMessage("Có lỗi xảy ra");
+        }
+        return ResponseEntity.ok(response);
+    }
 }
