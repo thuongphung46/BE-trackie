@@ -53,9 +53,10 @@ public class AuthorController {
     public ResponseEntity<BaseResponse> updateAuthor(@PathVariable Long id, @RequestBody AuthorCreateRequest request) {
         BaseResponse response = new BaseResponse();
         try {
-            authorService.update(id, request);
+
             response.setMsg_code(200);
             response.setMessage("Successfully");
+            response.setContent(authorService.update(id, request));
         } catch (ActvnException e) {
             response.setMsg_code(-1);
             response.setMessage(e.getMessage());

@@ -10,10 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/character/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/character/CharacterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/GenreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/genre/GenreController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/kma/hrmactvn/controller/post/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/author/AuthorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/author/AuthorController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/character/CharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/character/CharacterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/genre/GenreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/genre/GenreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/post/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/kma/hrmactvn/controller/post/PostController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,7 @@
       <workItem from="1718293155286" duration="378000" />
       <workItem from="1718293827143" duration="1395000" />
       <workItem from="1718375584900" duration="1387000" />
-      <workItem from="1718420662030" duration="10490000" />
+      <workItem from="1718420662030" duration="11361000" />
     </task>
     <servers />
   </component>

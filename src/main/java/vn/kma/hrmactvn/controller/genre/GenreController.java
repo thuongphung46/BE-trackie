@@ -70,9 +70,9 @@ public class GenreController {
     public ResponseEntity<BaseResponse> updateGenre(@PathVariable Long id, @RequestBody GenreCreateRequest request) {
         BaseResponse response = new BaseResponse();
         try {
-            genreService.update(id, request);
             response.setMsg_code(200);
-            response.setMessage("Successfully updated");
+            response.setMessage("Successfully");
+            response.setContent(genreService.update(id, request));
         } catch (ActvnException e) {
             response.setMsg_code(-1);
             response.setMessage(e.getMessage());

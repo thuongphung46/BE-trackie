@@ -53,9 +53,10 @@ public class CharacterController {
     public ResponseEntity<BaseResponse> updateCharacter(@PathVariable Long id, @RequestBody CharacterCreateRequest request) {
         BaseResponse response = new BaseResponse();
         try {
-            characterService.updateCharacter(id, request);
+
             response.setMsg_code(200);
-            response.setMessage("Successfully updated");
+            response.setMessage("Successfully");
+            response.setContent(characterService.updateCharacter(id, request));
         } catch (ActvnException e) {
             response.setMsg_code(-1);
             response.setMessage(e.getMessage());

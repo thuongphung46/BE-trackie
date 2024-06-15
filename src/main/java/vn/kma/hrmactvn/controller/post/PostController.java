@@ -85,9 +85,9 @@ public class PostController {
     public ResponseEntity<BaseResponse> updatePost(@PathVariable Long id, @RequestBody PostCreateRequest request) {
         BaseResponse response = new BaseResponse();
         try {
-            postService.update(id, request);
             response.setMsg_code(200);
             response.setMessage("successfully");
+            response.setContent(postService.update(id, request));
         } catch (Exception e) {
             response.setMsg_code(400);
             response.setMessage("Có lỗi xẩy ra");
