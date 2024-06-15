@@ -42,7 +42,7 @@ public class GenreController {
             response.setMessage("Success");
             response.setContent(genreResponse);
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);
@@ -55,9 +55,10 @@ public class GenreController {
     public ResponseEntity<BaseResponse> createGenre(@RequestBody GenreCreateRequest request) {
         BaseResponse response = new BaseResponse();
         try {
-            genreService.createGenre(request);
-            response.setMsg_code(201);
-            response.setMessage("Genre created successfully");
+
+            response.setMsg_code(200);
+            response.setMessage("Successfully");
+            response.setContent(genreService.createGenre(request));
         } catch (Exception e) {
             response.setMsg_code(400);
             response.setMessage("Có lỗi xảy ra");
@@ -73,7 +74,7 @@ public class GenreController {
             response.setMsg_code(200);
             response.setMessage("Successfully updated");
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);
@@ -90,7 +91,7 @@ public class GenreController {
             response.setMsg_code(200);
             response.setMessage("Success");
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);

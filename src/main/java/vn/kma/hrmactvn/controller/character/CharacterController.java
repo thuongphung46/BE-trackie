@@ -21,9 +21,10 @@ public class CharacterController {
     public ResponseEntity<BaseResponse> createCharacter(@RequestBody CharacterCreateRequest request) {
         BaseResponse response = new BaseResponse();
         try {
-            characterService.createCharacter(request);
-            response.setMsg_code(201);
-            response.setMessage("Character created successfully");
+
+            response.setMsg_code(200);
+            response.setMessage("successfully");
+            response.setContent(characterService.createCharacter(request));
         } catch (Exception e) {
             response.setMsg_code(400);
             response.setMessage("Có lỗi xảy ra");
@@ -39,7 +40,7 @@ public class CharacterController {
             response.setMessage("Success");
             response.setContent(characterService.getCharacterById(id));
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);
@@ -56,7 +57,7 @@ public class CharacterController {
             response.setMsg_code(200);
             response.setMessage("Successfully updated");
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);
@@ -73,7 +74,7 @@ public class CharacterController {
             response.setMsg_code(200);
             response.setMessage("Success");
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);

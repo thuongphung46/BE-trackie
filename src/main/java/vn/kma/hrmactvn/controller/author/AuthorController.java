@@ -25,7 +25,7 @@ public class AuthorController {
             response.setMessage("Successfully");
             response.setContent( authorService.getAuthorById(id));
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);
@@ -38,9 +38,10 @@ public class AuthorController {
     public ResponseEntity<BaseResponse> createAuthor(@RequestBody AuthorCreateRequest request) {
         BaseResponse response = new BaseResponse();
         try {
-            authorService.createAuthor(request);
+
             response.setMsg_code(200);
             response.setMessage("Successfully");
+            response.setContent( authorService.createAuthor(request));
         } catch (Exception e) {
             response.setMsg_code(400);
             response.setMessage("Có lỗi xảy ra");
@@ -56,7 +57,7 @@ public class AuthorController {
             response.setMsg_code(200);
             response.setMessage("Successfully");
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);
@@ -73,7 +74,7 @@ public class AuthorController {
             response.setMsg_code(200);
             response.setMessage("Success");
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);

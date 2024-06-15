@@ -28,7 +28,7 @@ public class PostController {
             response.setMessage("Success");
             response.setContent(postResponse);
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);
@@ -72,8 +72,8 @@ public class PostController {
         BaseResponse response = new BaseResponse();
         try {
             postService.createPost(request);
-            response.setMsg_code(201);
-            response.setMessage("Post created successfully");
+            response.setMsg_code(200);
+            response.setMessage("Successfully");
         } catch (Exception e) {
             response.setMsg_code(400);
             response.setMessage("Có lỗi xẩy ra");
@@ -103,7 +103,7 @@ public class PostController {
             response.setMsg_code(200);
             response.setMessage("Success");
         } catch (ActvnException e) {
-            response.setMsg_code(401);
+            response.setMsg_code(-1);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setMsg_code(400);
